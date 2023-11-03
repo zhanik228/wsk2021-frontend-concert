@@ -1,11 +1,13 @@
+import React from "react"
 
-const Select = (props) => {
-    const { defaultOption, options, onSelect } = props
+const Select = React.forwardRef((props, ref) => {
+    const { defaultOption, options, onSelect, value } = props
 
     return (
-        <select 
+        <select
+        ref={ref} 
         onChange={onSelect} 
-        defaultValue={defaultOption}
+        value={value || defaultOption}
         className="p-1"
         >
             <option
@@ -20,6 +22,6 @@ const Select = (props) => {
             ))}
         </select>
     )
-}
+})
 
 export default Select
