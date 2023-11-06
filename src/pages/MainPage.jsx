@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from "react"
 import React from "react"
 import Select from "../atoms/select/Select"
-import { useFetch } from "../hooks/api/useFetch"
+import { useConcerts } from "../hooks/api/useConcerts"
 import { extractConcertArtists, extractConcertLocations, extractShows } from "../helpers/concert/concertHelpers"
 import Card from "../molecules/card/Card"
 import CardList from "../molecules/card-list/CardList"
@@ -11,7 +11,7 @@ const MainPage = () => {
     const [selectedLocation, setSelectedLocation] = useState(null)
     const [selectedDate, setSelectedDate] = useState('')
 
-    let concerts = useFetch()
+    let concerts = useConcerts()
 
     const selectInputRef = React.createRef()
     const selectLocationRef = React.createRef()
