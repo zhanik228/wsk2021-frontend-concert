@@ -23,4 +23,15 @@
 
 .unavailable {
     background-color: red;
+    cursor: not-allowed;
+}
+
+.unavailable:hover {
+    background-color: red;
+    color: #000;
+}
+
+.selected {
+    background-color: #222;
+    color: #fff;
 }
